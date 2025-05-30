@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./../output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <div class="min-h-screen flex flex-col justify-between">
+
+        <!-- Hero Section -->
+        <main class="flex-grow flex items-center justify-center px-4">
+            <div class="max-w-3xl text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    Welcome to Our Student Tech Community
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Join GDG Chapter Campus at UIN Alauddin Makassar and explore the world of technology,
+                    web development, AI, and cloud with a supportive and inspiring student community.
+                </p>
+                <a href="{{ route('auth.google') }}"
+                    class="inline-flex items-center px-6 py-3 bg-green-600 text-white text-base font-medium rounded-lg hover:bg-green-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 48 48">
+                        <path fill="#FFC107"
+                            d="M43.6 20.5H42V20H24v8h11.3C34 32.4 29.6 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l5.9-5.9C33.9 6.1 29.2 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20c11 0 20-8 20-20 0-1.3-.1-2.5-.4-3.5z" />
+                        <path fill="#FF3D00"
+                            d="M6.3 14.7l6.6 4.8C14 16.1 18.6 13 24 13c3 0 5.7 1.1 7.8 2.9l5.9-5.9C33.9 6.1 29.2 4 24 4 16.3 4 9.5 8.1 6.3 14.7z" />
+                        <path fill="#4CAF50"
+                            d="M24 44c5.2 0 9.9-1.9 13.5-5l-6.3-5.2C29.6 35.9 26.9 37 24 37c-5.6 0-10.2-3.6-11.8-8.5l-6.6 5.1C9.5 39.9 16.3 44 24 44z" />
+                        <path fill="#1976D2"
+                            d="M43.6 20.5H42V20H24v8h11.3c-1.1 3.1-3.3 5.6-6.1 7.2l6.3 5.2C38.7 37.1 44 31.6 44 24c0-1.3-.1-2.5-.4-3.5z" />
+                    </svg>
+                    Sign in with Google
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-sm text-gray-500 py-6">
+                © Google Developer Group Chapter UIN Alauddin Makassar 2025 
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

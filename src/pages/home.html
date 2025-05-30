@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./../output.css" rel="stylesheet">
+</head>
+<body>
+  <div class="w-full relative flex flex-col min-h-screen font-Inter">
+    <!-- navbar section -->
+    <nav x-data="{ isOpen: false }" class="sticky top-0 z-20 bg-white">
+      <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+          <a href="#" class="flex items-center gap-5 italic font-medium md:text-2xl text-xl text-green-700">
+            GDG UINAM Sites
+          </a>
+
+          <!-- Mobile menu button -->
+          <button x-cloak @click="isOpen = !isOpen" type="button" class="flex sm:hidden cursor-pointer text-primary"
+            aria-label="toggle menu">
+            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+            </svg>
+
+            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+          class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+          <div class="flex flex-col md:flex-row md:mx-6">
+            <a href="/home"
+              class="group flex flex-col gap-1.5 my-2 md:mx-4 md:my-0 text-gray-700 {{ request()->is('/home') ? 'text-green-700' : '' }}">
+              Home
+              <div
+                class="lg:w-1/3 h-[3px] hidden {{ request()->is('/home') ? 'lg:block bg-green-700' : '' }} rounded-xl">
+              </div>
+            </a>
+
+            <a href="/profile"
+              class="group flex flex-col items-center gap-1.5 my-2 md:mx-4 md:my-0 text-gray-700 {{ request()->is('profile') ? 'text-green-500' : '' }}">
+
+              <!-- Heroicon: User -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0" />
+              </svg>
+
+              <div
+                class="lg:w-1/3 h-[3px] hidden {{ request()->is('profile') ? 'lg:block bg-green-700' : '' }} rounded-xl">
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main section -->
+    <main class="flex flex-col flex-1 pb-10 mt-4 gap-8 bg-background">
+
+      <div class="container mx-auto">
+        <div class="lg:mx-10 mx-4">
+          <div class="bg-white rounded-3xl shadow-xl">
+            <div class="lg:py-14 lg:px-16 px-8 flex flex-col lg:gap-16 gap-8">
+              <div class="lg:space-y-5 space-y-3">
+                <h1 class="text-3xl md:text-4xl font-bold text-green-600 mb-4">
+                  GDG Chapter Campus UIN Alauddin Makassar Resmi Diluncurkan, Dorong Mahasiswa Lebih
+                  Melek Teknologi Google
+                </h1>
+                <p class="text-sm text-gray-500 mb-6">Makassar, 27 Mei 2025</p>
+                <p class="mb-4">
+                  Dalam rangka mendukung literasi digital dan menciptakan ruang kolaborasi teknologi
+                  di kalangan mahasiswa,
+                  <span class="font-semibold">Google Developer Group (GDG) Chapter Campus UIN Alauddin
+                    Makassar</span> resmi diluncurkan.
+                  Chapter ini menjadi bagian dari ekosistem komunitas developer global yang berfokus
+                  pada eksplorasi dan pengembangan
+                  teknologi Google, namun dengan pendekatan yang lebih dekat ke dunia kampus.
+                </p>
+
+                <p class="mb-4">
+                  Peluncuran perdana dilaksanakan di Aula Fakultas Sains dan Teknologi, dan dihadiri
+                  oleh lebih dari 100 peserta dari
+                  berbagai jurusan, termasuk Teknik Informatika, Sistem Informasi, dan Ilmu Komputer.
+                  Kegiatan ini mengangkat tema
+                  <span class="italic">“Membangun Inovasi Digital dari Kampus”</span>, yang ditandai
+                  dengan sesi talkshow, workshop, serta live coding.
+                </p>
+
+                <p class="mb-4">
+                  Lead GDG Chapter Campus UIN Alauddin Makassar, <span class="font-semibold">Nur
+                    Halis</span>,
+                  mahasiswa aktif dari jurusan <span class="font-semibold">Ilmu Komputer</span>,
+                  menjelaskan bahwa kehadiran komunitas ini
+                  diharapkan bisa menjadi wadah belajar yang inklusif dan berkelanjutan bagi mahasiswa
+                  yang tertarik di bidang teknologi,
+                  khususnya yang ingin mendalami tools dari Google seperti Firebase, Flutter, dan
+                  Google Cloud Platform (GCP).
+                </p>
+
+                <blockquote class="border-l-4 border-green-500 pl-4 italic text-gray-600 my-6">
+                  “Kami ingin membuka akses belajar teknologi global kepada teman-teman mahasiswa. Di
+                  GDG Campus ini, siapa pun bisa
+                  bergabung dan tumbuh bersama. Tidak harus jago dulu, yang penting punya semangat
+                  belajar dan berkontribusi,”
+                  ujarnya dalam sambutan pembuka.
+                </blockquote>
+
+                <p class="mb-4">
+                  Acara peluncuran turut menghadirkan pemateri dari komunitas GDG Makassar dan alumni
+                  Bangkit Academy, yang membagikan
+                  pengalaman mereka dalam pengembangan aplikasi berbasis Google Cloud dan Machine
+                  Learning. Salah satu sesi menarik
+                  adalah <span class="font-semibold">“Implementasi Google OAuth di Laravel”</span>
+                  yang menunjukkan bagaimana teknologi autentikasi Google dapat
+                  diintegrasikan ke dalam aplikasi web kampus.
+                </p>
+
+                <p class="mb-2">Kegiatan rutin yang akan diselenggarakan antara lain:</p>
+                <ul class="list-disc list-inside mb-6">
+                  <li><span class="font-medium">Study Jam</span></li>
+                  <li><span class="font-medium">Code Lab</span></li>
+                  <li><span class="font-medium">Google Tech Update</span></li>
+                </ul>
+
+                <p class="mb-4">
+                  Semua kegiatan ini bertujuan untuk meningkatkan kompetensi digital mahasiswa dan
+                  mempersiapkan mereka menghadapi dunia industri 4.0.
+                </p>
+
+                <blockquote class="border-l-4 border-green-500 pl-4 italic text-gray-600 my-6">
+                  “Kami percaya bahwa kampus bukan hanya tempat kuliah, tapi juga laboratorium
+                  inovasi. Dengan hadirnya GDG, semoga
+                  mahasiswa UIN Alauddin bisa ikut bersaing di kancah teknologi global,” tutup Halis.
+                </blockquote>
+
+                <p class="mb-2">
+                  Bagi mahasiswa yang ingin bergabung atau mengikuti kegiatan selanjutnya, informasi
+                  lebih lanjut bisa diperoleh melalui
+                  akun resmi GDG UIN Alauddin di Instagram atau kanal komunitas Google Developer Group
+                  Indonesia.
+                </p>
+              </div>
+
+              <!-- Dokumentasi Section -->
+              <div class="flex flex-col lg:space-y-5 space-y-3">
+                <h1 class="text-primary font-semibold lg:text-2xl text-xl text-left">
+                  Dokumentasi
+                </h1>
+                <div class="md:grid md:grid-cols-[1fr_180px] md:space-x-6 space-y-4">
+                  <div class="h-full overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWN0aXZpdHl8ZW58MHx8MHx8fDA%3D"
+                      alt="joging" class="w-full object-cover aspect-video h-full rounded-xl" />
+                  </div>
+                  <div class="flex md:flex-col flex-row gap-4">
+                    <div class="h-1/4 overflow-hidden">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1661284917589-d96587cbe886?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWN0aXZpdHl8ZW58MHx8MHx8fDA%3D"
+                        alt="sepedaan" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                    <div class="h-1/4 overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1635702961175-f6949dded992?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWN0aXZpdHl8ZW58MHx8MHx8fDA%3D"
+                        alt="sepedaan" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                    <div class="h-1/4 overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1635702961175-f6949dded992?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWN0aXZpdHl8ZW58MHx8MHx8fDA%3D"
+                        alt="sepedaan" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                    <div class="h-1/4 overflow-hidden">
+                      <img
+                        src="https://images.unsplash.com/photo-1635702961175-f6949dded992?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWN0aXZpdHl8ZW58MHx8MHx8fDA%3D"
+                        alt="sepedaan" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500">
+      <div class="container text-center p-6 mx-auto">
+        <p class="lg:text-base text-sm text-white">
+          © Google Developer Group Chapter UIN Alauddin Makassar 2025
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
