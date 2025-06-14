@@ -45,7 +45,19 @@
         </footer>
     </div>
 
-    <script src="/js/main.js"></script>
+    <script>
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }, function(err) {
+                    console.error('Service Worker registration failed:', err);
+                });
+            });
+        } else {
+            console.warn('Service Workers are not supported in this browser.');
+        }
+    </script>
 </body>
 
 </html>
